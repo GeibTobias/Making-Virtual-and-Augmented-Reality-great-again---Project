@@ -1,0 +1,31 @@
+Initialize engine version: 5.6.3p2 (b3d7a6428558)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro M1000M (ID=0x13b1)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.036 seconds
+Platform assembly: C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Kevin\Desktop\tmp\Making-Virtual-and-Augmented-Reality-great-again---Project\test\CocktailMixer\Builds\first_build_Data\Managed\System.dll (this message is harmless)
+desktop: 1680x1050 59Hz; virtual: 3600x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 3600x1080 at -1920,0
+<RI> Initialized touch support.
+UnloadTime: 1.618558 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 24a0 -> priority: 1 
+  Thread -> id: c2c -> priority: 1 
+  Thread -> id: 21e8 -> priority: 1 
+  Thread -> id: 15e0 -> priority: 1 
