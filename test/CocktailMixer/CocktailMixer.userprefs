@@ -2,13 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StateManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\StreamVideo.cs" Line="25" Column="71" />
+      <File FileName="Assets\Scripts\StreamVideo.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InstructionTextController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BottlePositionController.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\StateManager.cs" Line="44" Column="3" />
-      <File FileName="Assets\Scripts\Step.cs" Line="9" Column="36" />
-      <File FileName="Assets\Scripts\Receipe.cs" Line="23" Column="25" />
-      <File FileName="Assets\Scripts\Bottle.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\BottlePositionController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StateManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Step.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Receipe.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bottle.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

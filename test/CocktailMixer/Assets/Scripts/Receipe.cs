@@ -6,11 +6,15 @@ public class Receipe {
 
 	public string name; 
 	public List<string> keywords; 
-	public List<Step> steps; 
+	public List<Step> steps;
 
-	// picture is left here
+    public Dictionary<string, Bottle> bottles;
 
-	public Receipe() {
+    // picture is left here
+
+    public Receipe()
+    {
+        bottles = new Dictionary<string, Bottle>(); 
 	}
 
 	public Receipe(List<string> keywords) {

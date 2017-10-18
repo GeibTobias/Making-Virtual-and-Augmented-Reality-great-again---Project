@@ -26,14 +26,24 @@ public class StreamVideo : MonoBehaviour {
 	 */
 	public void setVideoClip (VideoClip newClip) 
 	{
-		videoClip = newClip; 
+		videoClip = newClip;
+        setVideoClip(); 
+    }
 
-		if (backgroundRoutine != null) {
-			StopCoroutine (backgroundRoutine); 
-		}
+    public void setVideoClip()
+    {
+        stopVideo();
+        backgroundRoutine = StartCoroutine(playVideo());
+    }
 
-		backgroundRoutine = StartCoroutine (playVideo ()); 
-	}
+    public void stopVideo()
+    {
+        if( backgroundRoutine != null )
+        {
+            videoPlayer.Stop(); 
+            StopCoroutine(backgroundRoutine);
+        }
+    }
 	
 	IEnumerator playVideo()
 	{

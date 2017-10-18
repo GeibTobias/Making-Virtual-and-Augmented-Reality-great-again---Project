@@ -6,5 +6,5 @@ public class Step {
 
 	public int id; 
 	public List<string> highlight; 
-	public List<string> instructions; 
+	public List<string> instructions;
 }
