@@ -46,8 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bottle.cs" />
+     <Compile Include="Assets\Scripts\BottlePositionController.cs" />
+     <Compile Include="Assets\Scripts\InstructionTextController.cs" />
+     <Compile Include="Assets\Scripts\Receipe.cs" />
+     <Compile Include="Assets\Scripts\StateManager.cs" />
+     <Compile Include="Assets\Scripts\Step.cs" />
      <Compile Include="Assets\Scripts\StreamVideo.cs" />
-     <Compile Include="Assets\Scripts\VideoPlayerController.cs" />
      <None Include="Assets\Sprites\Wood texture floor_01\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

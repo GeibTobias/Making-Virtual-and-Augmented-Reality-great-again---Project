@@ -9,15 +9,30 @@ public class StreamVideo : MonoBehaviour {
 	public RawImage image; 
 	public VideoClip videoClip; 
 
+	private Coroutine backgroundRoutine; 
 	private VideoPlayer videoPlayer; 
 
 	// Use this for initialization
 	void Start () {
 		Application.runInBackground = true; 
-		StartCoroutine (playVideo()); 
+		backgroundRoutine = StartCoroutine (playVideo()); 
 	}
 
 	void Update() {
+	}
+
+	/**
+	 * Method stops the the current video and starts the new given video.
+	 */
+	public void setVideoClip (VideoClip newClip) 
+	{
+		videoClip = newClip; 
+
+		if (backgroundRoutine != null) {
+			StopCoroutine (backgroundRoutine); 
+		}
+
+		backgroundRoutine = StartCoroutine (playVideo ()); 
 	}
 	
 	IEnumerator playVideo()
