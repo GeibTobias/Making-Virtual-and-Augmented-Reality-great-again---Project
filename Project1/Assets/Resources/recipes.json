@@ -1,0 +1,103 @@
+{
+	"name": "best cocktails ever collection",
+	"recipes": [
+	  {
+	    "id": "Caipirinha",
+	    "picture": "caipirinha",
+	    "keywords": [
+	      "Caipi",
+	      "Caipirinha"
+	    ],
+	    "steps": [
+	      {
+	        "id": 0,
+	        "ingredients": [
+	          "Lemon",
+	          "Knife"
+	        ],
+	        "instructions": [
+	          "Take 1/2 lemon",
+	          "Cut lemon in 3 wedges"
+	        ]
+	      },
+	      {
+	        "id": 3,
+	        "ingredients": [
+	          "Shaker",
+			  "Muddler",
+			  "Lemon",
+			  "Sugar"
+	        ],
+	        "instructions": [
+	          "Add the lemon wedges and 1 tbsp. sugar into the shaker",
+			  "Muddle the ingredients gently"
+	        ]
+	      },
+	      {
+	        "id": 5,
+	        "ingredients": [
+	          "Shaker",
+			  "Cachaca",
+			  "Ice"
+	        ],
+	        "instructions": [
+	          "Add 4cl into the shaker",
+			  "Add ice into the shaker"
+	        ]
+	      },
+	      {
+	        "id": 4,
+	        "ingredients": [
+	          "Shaker",
+			  "ShakerTop"
+	        ],
+	        "instructions": [
+	          "Mix the ingredients gently in shaker"
+	        ]
+	      },
+	      {
+	        "id": 5,
+	        "ingredients": [
+	          "Shaker",
+			  "TumblerGlass"
+	        ],
+	        "instructions": [
+	          "Pour into tumbler glass"
+	        ]
+	      }
+	    ]
+	  },
+	  {
+	    "id": "Sex on the Beach",
+	    "picture": "sexOnTheBeach",
+	    "keywords": [
+	      "Sex",
+	      "Sex on the Beach",
+	      "Beach"
+	    ],
+	    "steps": [
+	      {
+	        "id": 2,
+	        "ingredients": [
+	          "lemon",
+	          "knife"
+	        ],
+	        "instructions": [
+	          "take lemon",
+	          "cut lemon",
+	          "put lemon into mixer"
+	        ]
+	      },
+	      {
+	        "id": 5,
+	        "ingredients": [
+	          "mixer"
+	        ],
+	        "instructions": [
+	          "Throw the mixer in the air (see video)"
+	        ]
+	      }
+	    ]
+	  }
+	]
+}
