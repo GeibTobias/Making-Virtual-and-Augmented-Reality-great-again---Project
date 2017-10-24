@@ -4,6 +4,9 @@ Project1/[Oo]bj/
 Project1/[Bb]uild/
 Project1/[Bb]uilds/
 Project1/Assets/AssetStoreTools*
+Project1/build1_Data/
+Project1/build1.app/
+Project1/UnityPackageManager/
 
 # Visual Studio 2015 cache directory
 Project1/.vs/
