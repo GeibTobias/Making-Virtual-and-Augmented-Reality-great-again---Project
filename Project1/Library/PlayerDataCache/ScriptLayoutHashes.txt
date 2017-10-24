@@ -1,6 +1,13 @@
-OSXStandalone
+WindowsStandalone
+56441db03d5b4bb548b050e61dd1186e Assembly-CSharp.dll:cakeslice.OutlineEffect
+9ae2d03b7d67114b6d81b3afbf2c1d8c Assembly-CSharp.dll:.Bar
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:cakeslice.OutlineAnimation
+02f0bc5e25b41bdc131009e4484fe1db Assembly-CSharp.dll:cakeslice.Outline
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.KeywordScript
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:cakeslice.Rotate
+3d8fe8966e9b05bbd4143afd21bfa360 Assembly-CSharp.dll:cakeslice.MaterialSwitcher
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:cakeslice.Toggle
+1772bedb5039171762a1faf5de46a1a6 Assembly-CSharp.dll:.KeywordDetector
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer

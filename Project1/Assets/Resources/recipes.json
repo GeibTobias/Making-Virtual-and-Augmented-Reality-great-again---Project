@@ -2,6 +2,48 @@
 	"name": "best cocktails ever collection",
 	"recipes": [
 	  {
+		"ingredients": [
+			{
+				"id": 0,
+				"name": "Lemon",
+				"type": "misc"
+			},
+			{
+				"id": 1,
+				"name": "Knife",
+				"type": "misc"
+			},
+			{
+				"id": 2,
+				"name": "Shaker",
+				"type": "cups"
+			},
+			{
+				"id": 3,
+				"name": "Muddler",
+				"type": "misc"
+			},
+			{
+				"id": 4,
+				"name": "Sugar",
+				"type": "misc"
+			},
+			{
+				"id": 5,
+				"name": "Cachaca",
+				"type": "bottle"
+			},
+			{
+				"id": 6,
+				"name": "Ice",
+				"type": "misc"
+			},
+			{
+				"id": 7,
+				"name": "TumblerGlass",
+				"type": "glass"
+			}
+		],
 	    "id": "Caipirinha",
 	    "picture": "caipirinha",
 	    "keywords": [
@@ -10,10 +52,10 @@
 	    ],
 	    "steps": [
 	      {
-	        "id": 0,
+			"video": "cuttingLemons",
 	        "ingredients": [
-	          "Lemon",
-	          "Knife"
+	          1,
+			  0
 	        ],
 	        "instructions": [
 	          "Take 1/2 lemon",
@@ -21,12 +63,11 @@
 	        ]
 	      },
 	      {
-	        "id": 3,
 	        "ingredients": [
-	          "Shaker",
-			  "Muddler",
-			  "Lemon",
-			  "Sugar"
+	          2,
+			  3,
+			  0,
+			  4
 	        ],
 	        "instructions": [
 	          "Add the lemon wedges and 1 tbsp. sugar into the shaker",
@@ -34,11 +75,10 @@
 	        ]
 	      },
 	      {
-	        "id": 5,
 	        "ingredients": [
-	          "Shaker",
-			  "Cachaca",
-			  "Ice"
+	          2,
+			  5,
+			  6
 	        ],
 	        "instructions": [
 	          "Add 4cl into the shaker",
@@ -46,20 +86,19 @@
 	        ]
 	      },
 	      {
-	        "id": 4,
+	        "video": "shakeCaipirinha",
 	        "ingredients": [
-	          "Shaker",
-			  "ShakerTop"
+	          2
 	        ],
 	        "instructions": [
 	          "Mix the ingredients gently in shaker"
 	        ]
 	      },
 	      {
-	        "id": 5,
+	        "video": "pourCaipirinhaInGlass",
 	        "ingredients": [
-	          "Shaker",
-			  "TumblerGlass"
+	          2,
+			  7
 	        ],
 	        "instructions": [
 	          "Pour into tumbler glass"
@@ -77,10 +116,10 @@
 	    ],
 	    "steps": [
 	      {
-	        "id": 2,
+	        "video": "cutLemons",
 	        "ingredients": [
-	          "lemon",
-	          "knife"
+	          0,
+	          1
 	        ],
 	        "instructions": [
 	          "take lemon",
@@ -89,9 +128,9 @@
 	        ]
 	      },
 	      {
-	        "id": 5,
+	        "video": "cutLemons",
 	        "ingredients": [
-	          "mixer"
+	          2
 	        ],
 	        "instructions": [
 	          "Throw the mixer in the air (see video)"
