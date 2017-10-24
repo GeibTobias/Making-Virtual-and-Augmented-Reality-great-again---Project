@@ -6,11 +6,14 @@ public class Bar : MonoBehaviour {
 
 	public RecipeCollection collection;
 	public GameObject instructionsText;
-	private StateManager stateManager;
+    public Initializer initializer;
+    private StateManager stateManager;
 	private KeywordDetector keywordDetector;
 
-	// Use this for initialization
-	void Start () {
+    
+
+    // Use this for initialization
+    void Start () {
 		stateManager = new StateManager();
 		stateManager.StatusChanged += sm_OnStatusChanged;
 
@@ -19,7 +22,11 @@ public class Bar : MonoBehaviour {
 
 		LoadRecipes();
 
-		setupUI ();
+        // Mapping of ingredients and GameObjects
+        initializer = new Initializer();
+        //initializer.init(ingredients);
+
+        setupUI ();
 	}
 
 	// Update is called once per frame
