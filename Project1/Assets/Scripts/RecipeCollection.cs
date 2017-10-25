@@ -4,8 +4,8 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class RecipeCollection {
-
+public class RecipeCollection
+{
 	public string name;
 	public List<Recipe> recipes;
 }

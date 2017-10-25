@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BucketHighlightUI
   - BottleHighlightUI
   - MiscHighlightUI
+  - CupHighlightUI
   layers:
   - Default
   - TransparentFX

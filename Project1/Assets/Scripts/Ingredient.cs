@@ -1,10 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Ingredient {
+public enum IngredientType
+{
+	BOTTLE,
+	MISC,
+	CUP
+}
 
-    public long id;
-    public string name;
-    public IngredientType type; 
+[Serializable]
+public class Ingredient
+{
+	public long id;
+	public string name;
+	public IngredientType type;
 }

@@ -2,50 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bar : MonoBehaviour {
+public class Bar : MonoBehaviour
+{
 
 	public RecipeCollection collection;
 	public GameObject instructionsText;
-    public Initializer initializer;
-    private StateManager stateManager;
+	private BarInitializer initializer;
+	private StateManager stateManager;
 	private KeywordDetector keywordDetector;
 
-    
-
-    // Use this for initialization
-    void Start () {
-		stateManager = new StateManager();
+	// Use this for initialization
+	void Start ()
+	{
+		stateManager = new StateManager ();
 		stateManager.StatusChanged += sm_OnStatusChanged;
 
 		keywordDetector = this.GetComponent<KeywordDetector> ();
 		keywordDetector.CommandDetected += kd_OnCommandDetected;
 
-		LoadRecipes();
+		collection = LoadRecipes ();
 
-        // Mapping of ingredients and GameObjects
-        initializer = new Initializer();
-        //initializer.init(ingredients);
+		initializer = new BarInitializer ();
 
-        setupUI ();
+		setupUI ();
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 				
 	}
 
-	private void setupUI () {
+	private void setupUI ()
+	{
 		switch (stateManager.State) {
 		case State.CocktailSelection:
-			instructionsText.GetComponents<TextMesh> () [0].text = "";
+			instructionsText.GetComponents<TextMesh> () [0].text = "Pick a Cocktail number:\n";
 			for (int i = 0; i < collection.recipes.Count; i++) {
-				string line = (i+1) + ") " + collection.recipes [i].id + "\n";
+				string line = (i + 1) + ") " + collection.recipes [i].id + "\n";
 				instructionsText.GetComponents<TextMesh> () [0].text += line;
 			}
 
 			break;
 
 		case State.BarInitialization:
+			// Mapping of ingredients and GameObjects
+			initializer.init (stateManager.currentRecipe.ingredients);
+
 			instructionsText.GetComponents<TextMesh> () [0].text = "Place Bottles and\nIngredients on Table";
 
 			break;
@@ -58,18 +61,21 @@ public class Bar : MonoBehaviour {
 		}	
 	}
 
-	private void LoadRecipes() {
-		TextAsset json = Resources.Load("recipes") as TextAsset;
-		collection = JsonUtility.FromJson<RecipeCollection> (json.text);
+	private RecipeCollection LoadRecipes ()
+	{
+		TextAsset json = Resources.Load ("recipes") as TextAsset;
+		return JsonUtility.FromJson<RecipeCollection> (json.text);
 	}
 
-	private void sm_OnStatusChanged(object sender, StatusChangedEventArgs e) {
-		Debug.Log("sm_OnStatusChanged: " + e.NewState);
+	private void sm_OnStatusChanged (object sender, StatusChangedEventArgs e)
+	{
+		Debug.Log ("sm_OnStatusChanged: " + e.NewState);
 		setupUI ();
 	}
 
-	private void kd_OnCommandDetected(object sender, CommandDetectedEventArgs e) {
-		Debug.Log("kd_OnCommandDetected: " + e.Command);
+	private void kd_OnCommandDetected (object sender, CommandDetectedEventArgs e)
+	{
+		Debug.Log ("kd_OnCommandDetected: " + e.Command);
 
 		switch (stateManager.State) {
 		case State.CocktailSelection:
@@ -114,7 +120,9 @@ public class Bar : MonoBehaviour {
 
 			break;
 
-		case State.BarInitialization: case State.RecipeExecution: case State.RecipeFinished:
+		case State.BarInitialization:
+		case State.RecipeExecution:
+		case State.RecipeFinished:
 			break;
 		}
 	}

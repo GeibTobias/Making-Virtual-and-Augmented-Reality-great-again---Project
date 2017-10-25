@@ -10,4 +10,5 @@ public class Recipe
 	public List<string> keywords;
 	public List<Step> steps;
 	public string picture;
+	public List<Ingredient> ingredients;
 }

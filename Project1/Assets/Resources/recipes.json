@@ -2,54 +2,54 @@
 	"name": "best cocktails ever collection",
 	"recipes": [
 	  {
-		"ingredients": [
-			{
-				"id": 0,
-				"name": "Lemon",
-				"type": "misc"
-			},
-			{
-				"id": 1,
-				"name": "Knife",
-				"type": "misc"
-			},
-			{
-				"id": 2,
-				"name": "Shaker",
-				"type": "cups"
-			},
-			{
-				"id": 3,
-				"name": "Muddler",
-				"type": "misc"
-			},
-			{
-				"id": 4,
-				"name": "Sugar",
-				"type": "misc"
-			},
-			{
-				"id": 5,
-				"name": "Cachaca",
-				"type": "bottle"
-			},
-			{
-				"id": 6,
-				"name": "Ice",
-				"type": "misc"
-			},
-			{
-				"id": 7,
-				"name": "TumblerGlass",
-				"type": "glass"
-			}
-		],
 	    "id": "Caipirinha",
 	    "picture": "caipirinha",
 	    "keywords": [
 	      "Caipi",
 	      "Caipirinha"
 	    ],
+		"ingredients": [
+			{
+				"id": 0,
+				"name": "Lemon",
+				"type": 1
+			},
+			{
+				"id": 1,
+				"name": "Knife",
+				"type": 1
+			},
+			{
+				"id": 2,
+				"name": "Shaker",
+				"type": 2
+			},
+			{
+				"id": 3,
+				"name": "Muddler",
+				"type": 1
+			},
+			{
+				"id": 4,
+				"name": "Sugar",
+				"type": 1
+			},
+			{
+				"id": 5,
+				"name": "Cachaca",
+				"type": 0
+			},
+			{
+				"id": 6,
+				"name": "Ice",
+				"type": 1
+			},
+			{
+				"id": 7,
+				"name": "TumblerGlass",
+				"type": 2
+			}
+		],
 	    "steps": [
 	      {
 			"video": "cuttingLemons",
@@ -114,6 +114,18 @@
 	      "Sex on the Beach",
 	      "Beach"
 	    ],
+		"ingredients": [
+			{
+				"id": 0,
+				"name": "Lemon",
+				"type": 1
+			},
+			{
+				"id": 1,
+				"name": "Knife",
+				"type": 1
+			}
+		],
 	    "steps": [
 	      {
 	        "video": "cutLemons",

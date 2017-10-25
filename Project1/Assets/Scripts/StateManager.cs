@@ -16,29 +16,33 @@ public class StatusChangedEventArgs : EventArgs
 	public State NewState { get; set; }
 }
 
-public class StateManager {
+public class StateManager
+{
+	private State state;
 
-    private State state;
 	public State State {
 		get { return this.state; }
 		set {
 			this.state = value;
-			StatusChangedEventArgs args = new StatusChangedEventArgs();
+			StatusChangedEventArgs args = new StatusChangedEventArgs ();
 			args.NewState = state;
-			OnStatusChanged(this, args);
+			OnStatusChanged (this, args);
 		}
 	}
+
 	public event EventHandler<StatusChangedEventArgs> StatusChanged;
+
 	public Recipe currentRecipe = null;
 	public Step currentStep = null;
 
-	protected virtual void OnStatusChanged(object sender, StatusChangedEventArgs e)
+	protected virtual void OnStatusChanged (object sender, StatusChangedEventArgs e)
 	{
 		if (StatusChanged != null)
-			StatusChanged(this, e);
+			StatusChanged (this, e);
 	}
 
-	public void next() {
+	public void next ()
+	{
 		Debug.Log ("next()");
 	}
 }
