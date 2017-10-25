@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
+using cakeslice;
 
 
 public class BarInitializer
@@ -40,7 +39,19 @@ public class BarInitializer
 		Debug.Log ("# bottle ui game objects: " + bottleUIs.Length);
 		Debug.Log ("# bucket ui game objects: " + cupUIs.Length);
 		Debug.Log ("# misc ui game objects: " + miscUIs.Length);
-	}
+
+        List<GameObject[]> uiLists = new List<GameObject[]>() { bottleUIs, miscUIs, cupUIs };
+
+        foreach (GameObject[] list in uiLists)
+        {
+            foreach (GameObject go in list)
+            {
+                // disable Outline
+                (go.transform.Find("Spot").GetComponent(typeof(Outline)) as Outline).enabled = false;
+                go.SetActive(false);
+            }
+        }
+    }
 
 	public Dictionary<Ingredient, GameObject> init (List<Ingredient> ingredients)
 	{
@@ -74,7 +85,7 @@ public class BarInitializer
 			}
 		}
 
-		hideUnusedGOs ();
+        showUsedGOs();
 
 		return ingredientMapping; 
 	}
@@ -101,16 +112,15 @@ public class BarInitializer
 		throw new Exception ("There are more ingredients given than ui highlights are defined available.");
 	}
 
-	private void hideUnusedGOs() {
+	private void showUsedGOs() {
 		List<GameObject[]> uiLists = new List<GameObject[]>() {bottleUIs, miscUIs, cupUIs};
 
 		foreach (GameObject[] list in uiLists) {
 			foreach (GameObject go in list) {
 				if (usedGOs.Contains (go)) {
 					go.SetActive (true);
-				} else {
-					go.SetActive (false);
-				}
+                    (go.transform.Find("Spot").GetComponent(typeof(Outline)) as Outline).enabled = true;
+                }
 			}
 		}
 	}

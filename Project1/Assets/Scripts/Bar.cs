@@ -37,7 +37,7 @@ public class Bar : MonoBehaviour
 	{
 		switch (stateManager.State) {
 		case State.CocktailSelection:
-			instructionsText.GetComponents<TextMesh> () [0].text = "Pick a Cocktail number:\n";
+			instructionsText.GetComponents<TextMesh> () [0].text = "Say a Cocktail number:\n";
 			for (int i = 0; i < collection.recipes.Count; i++) {
 				string line = (i + 1) + ") " + collection.recipes [i].id + "\n";
 				instructionsText.GetComponents<TextMesh> () [0].text += line;
