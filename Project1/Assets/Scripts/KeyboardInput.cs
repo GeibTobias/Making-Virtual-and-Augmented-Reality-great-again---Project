@@ -53,6 +53,12 @@ public class KeyboardInput
             cdArgs.Command = SpeechCommand.Done;
         }
 
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            Debug.Log("R key was released.");
+            cdArgs.Command = SpeechCommand.Repeat;
+        }
+
 
         if (cdArgs.Command != SpeechCommand.None)
         {

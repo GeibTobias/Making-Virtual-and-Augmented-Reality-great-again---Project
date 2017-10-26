@@ -91,6 +91,22 @@ public class BarInitializer
 	}
 
 
+    public Dictionary<Ingredient, GameObject> getIngGoMapping()
+    {
+        return this.ingredientMapping; 
+    }
+
+
+    public List<GameObject> getAllSpots()
+    {
+        List<GameObject> tmp = new List<GameObject>();
+        tmp.AddRange(bottleUIs);
+        tmp.AddRange(miscUIs);
+        tmp.AddRange(cupUIs);
+        return tmp; 
+    }
+
+
 	private void mapIngredients (Ingredient ing, GameObject[] uiArray)
 	{
 		GameObject go = getFreeGOs (uiArray);
@@ -115,13 +131,13 @@ public class BarInitializer
 	private void showUsedGOs() {
 		List<GameObject[]> uiLists = new List<GameObject[]>() {bottleUIs, miscUIs, cupUIs};
 
-		foreach (GameObject[] list in uiLists) {
-			foreach (GameObject go in list) {
-				if (usedGOs.Contains (go)) {
-					go.SetActive (true);
-                    (go.transform.Find("Spot").GetComponent(typeof(Outline)) as Outline).enabled = true;
-                }
-			}
-		}
-	}
+        // highlight all ingredient and spots
+        foreach (KeyValuePair<Ingredient, GameObject> entry in ingredientMapping)
+        {
+            GameObject go = entry.Value;
+            Ingredient ing = entry.Key;
+
+            SpotHighlighter.activate(go, ing); 
+        }
+    }
 }

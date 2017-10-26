@@ -10,6 +10,9 @@ public class Bar : MonoBehaviour
 	private BarInitializer initializer;
 	private StateManager stateManager;
 	private KeywordDetector keywordDetector;
+    private KeyboardInput keyboardInput;
+
+    private bool keyboardInputEnabled = true; 
 
 	// Use this for initialization
 	void Start ()
@@ -17,7 +20,10 @@ public class Bar : MonoBehaviour
 		stateManager = new StateManager ();
 		stateManager.StatusChanged += sm_OnStatusChanged;
 
-		keywordDetector = this.GetComponent<KeywordDetector> ();
+        keyboardInput = new KeyboardInput();
+        keyboardInput.CommandDetected += kd_OnCommandDetected;
+
+        keywordDetector = this.GetComponent<KeywordDetector> ();
 		keywordDetector.CommandDetected += kd_OnCommandDetected;
 
 		collection = LoadRecipes ();
@@ -30,8 +36,11 @@ public class Bar : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-				
-	}
+        if (keyboardInputEnabled && keyboardInput != null)
+        {
+            keyboardInput.isKeyPressed();
+        }
+    }
 
 	private void setupUI ()
 	{
@@ -49,15 +58,24 @@ public class Bar : MonoBehaviour
 			// Mapping of ingredients and GameObjects
 			initializer.init (stateManager.currentRecipe.ingredients);
 
-			instructionsText.GetComponents<TextMesh> () [0].text = "Place Bottles and\nIngredients on Table";
+			instructionsText.GetComponents<TextMesh> () [0].text = "Place Bottles and\nIngredients on Table\nSay 'DONE' if finished";
 
 			break;
 
 		case State.RecipeExecution:
-			break;
+                stateManager.resetSteps(); 
+                // show first step
+                recipeNextCommand();
+
+                break;
 
 		case State.RecipeFinished:
-			break;
+                dehighlightAllSpots();
+                stateManager.resetSteps();
+
+                instructionsText.GetComponents<TextMesh>()[0].text = "Enjoy the Cocktail.\nSay 'Repeat' to do it again\nSay 'Done' to return to selection";
+
+                break;
 		}	
 	}
 
@@ -110,10 +128,6 @@ public class Bar : MonoBehaviour
 					stateManager.State = State.BarInitialization;
 				}
 				break;
-			case SpeechCommand.None:
-			case SpeechCommand.Next:
-			case SpeechCommand.Previous:
-			case SpeechCommand.Done:
 			case SpeechCommand.Exit:
 				break;
 			}
@@ -121,9 +135,146 @@ public class Bar : MonoBehaviour
 			break;
 
 		case State.BarInitialization:
+                this.barinitialization(e);
+                break;
 		case State.RecipeExecution:
-		case State.RecipeFinished:
-			break;
+                this.recipeExecution(e);
+                break; 
+
+        case State.RecipeFinished:
+                this.recipeFinished(e);
+                break;
 		}
 	}
+
+
+    private void barinitialization(CommandDetectedEventArgs e)
+    {
+        switch (e.Command)
+        {
+            case SpeechCommand.Done:
+                stateManager.State = State.RecipeExecution;
+                dehighlightAllSpots();
+
+                break; 
+            case SpeechCommand.Exit:
+                break;
+        }
+    }
+
+
+    private void recipeFinished(CommandDetectedEventArgs e)
+    {
+        switch (e.Command)
+        {
+            case SpeechCommand.Done:
+                dehighlightAllSpots();
+                stateManager.State = State.CocktailSelection;
+                
+                break;
+
+            case SpeechCommand.Repeat:
+                dehighlightAllSpots();
+                stateManager.resetSteps(); 
+                stateManager.State = State.BarInitialization;
+
+                break; 
+
+            case SpeechCommand.Exit:
+                break;
+        }
+    }
+
+
+    private void recipeExecution(CommandDetectedEventArgs e)
+    {
+        switch (e.Command)
+        {
+            case SpeechCommand.Next:
+                recipeNextCommand();
+                break;
+
+            case SpeechCommand.Previous:
+                recipePrevCommand();
+                break;
+                
+        }
+    }
+
+
+    private void recipeNextCommand()
+    {
+        Debug.Log("Process next command. "); 
+        if (stateManager.hasNextStep())
+        {
+            Step current = stateManager.next();
+            processStep(current);
+        }
+        else
+        {
+            Debug.Log("All steps executed. Recipe execution finished.");
+            stateManager.State = State.RecipeFinished;
+        }
+    }
+
+
+    private void recipePrevCommand()
+    {
+        Debug.Log("Process prev command. ");
+
+        Step current = stateManager.previous(); 
+        processStep(current);
+    }
+
+
+    private void processStep(Step current)
+    {
+        Debug.Log("Executing step");
+
+        // deactivate highlight for all spots
+        dehighlightAllSpots();
+
+        Dictionary<Ingredient, GameObject> dict = initializer.getIngGoMapping();
+
+        foreach (string item in current.highlightedObjects)
+        {
+            Dictionary<Ingredient, GameObject> toHighlight = getEntryById(item, dict);
+
+            foreach (KeyValuePair<Ingredient, GameObject> entry in toHighlight)
+            {
+                SpotHighlighter.activate(entry.Value, entry.Key); // can this be shifted into the other method?????
+            }
+        }
+
+        foreach (string instruction in current.instructions)
+        {
+            instructionsText.GetComponents<TextMesh>()[0].text = instruction + "\n";
+        }
+    }
+
+
+    private Dictionary<Ingredient, GameObject> getEntryById(string id, Dictionary<Ingredient, GameObject> dict)
+    {
+        Dictionary<Ingredient, GameObject> result = new Dictionary<Ingredient, GameObject>(); 
+
+        foreach (KeyValuePair<Ingredient, GameObject> entry in dict)
+        {
+            if( entry.Key.id.Equals(id) )
+            {
+                result.Add(entry.Key, entry.Value); 
+            }
+        }
+
+        return result; 
+    }
+
+
+    private void dehighlightAllSpots()
+    {
+        List<GameObject> tmp = initializer.getAllSpots(); 
+        foreach(GameObject go in tmp)
+        {
+            SpotHighlighter.deactive(go);
+        }
+    }
 }

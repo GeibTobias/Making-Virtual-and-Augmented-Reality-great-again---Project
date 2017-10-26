@@ -16,6 +16,7 @@ public enum SpeechCommand
 	Next,
 	Previous,
 	Done,
+    Repeat,
 	Exit
 }
 

@@ -34,6 +34,7 @@ public class StateManager
 
 	public Recipe currentRecipe = null;
 	public Step currentStep = null;
+    public int currentStepCount = 0; 
 
 	protected virtual void OnStatusChanged (object sender, StatusChangedEventArgs e)
 	{
@@ -41,8 +42,72 @@ public class StateManager
 			StatusChanged (this, e);
 	}
 
-	public void next ()
+
+    public Boolean hasNextStep()
+    {
+        if( currentRecipe == null)
+        {
+            return false; 
+        }
+
+        if( currentStepCount < currentRecipe.steps.Count - 1)
+        {
+            return true; 
+        }
+        else
+        {
+            return false; 
+        }
+    }
+
+
+	public Step next ()
 	{
-		Debug.Log ("next()");
+        if( currentRecipe == null )
+        {
+            throw new Exception("No Recipe loaded into StateManager"); 
+        }
+
+        // init with first step
+        if ( currentStep == null )
+        {
+            currentStepCount = 0;
+            currentStep = currentRecipe.steps[0];   
+        } 
+        else
+        {
+            currentStepCount++;
+            currentStep = currentRecipe.steps[currentStepCount]; 
+        }
+
+        return currentStep;
 	}
+
+
+    public Step previous()
+    {
+        if (currentRecipe == null)
+        {
+            throw new Exception("No Recipe loaded into StateManager");
+        }
+
+        if (currentStep == null || currentStepCount - 1 < 0)
+        {
+            currentStep = currentRecipe.steps[0];
+        }
+        else
+        {
+            currentStepCount--;
+            currentStep = currentRecipe.steps[currentStepCount];
+        }
+
+        return currentStep; 
+    }
+
+
+    public void resetSteps()
+    {
+        currentStep = null;
+        currentStepCount = 0; 
+    }
 }
