@@ -6,7 +6,7 @@ using System;
 [Serializable]
 public class Step
 {
-	public List<string> highlightedObjects;
+	public List<string> ingredients;
 	public List<string> instructions;
 	public bool	isWork;
 	public string video;

@@ -236,9 +236,9 @@ public class Bar : MonoBehaviour
 
         Dictionary<Ingredient, GameObject> dict = initializer.getIngGoMapping();
 
-        foreach (string item in current.highlightedObjects)
+        foreach (string item in current.ingredients)
         {
-            Dictionary<Ingredient, GameObject> toHighlight = getEntryById(item, dict);
+            Dictionary<Ingredient, GameObject> toHighlight = getEntryById(long.Parse( item ), dict);
 
             foreach (KeyValuePair<Ingredient, GameObject> entry in toHighlight)
             {
@@ -253,13 +253,13 @@ public class Bar : MonoBehaviour
     }
 
 
-    private Dictionary<Ingredient, GameObject> getEntryById(string id, Dictionary<Ingredient, GameObject> dict)
+    private Dictionary<Ingredient, GameObject> getEntryById(long id, Dictionary<Ingredient, GameObject> dict)
     {
         Dictionary<Ingredient, GameObject> result = new Dictionary<Ingredient, GameObject>(); 
 
         foreach (KeyValuePair<Ingredient, GameObject> entry in dict)
         {
-            if( entry.Key.id.Equals(id) )
+            if( entry.Key.id == id )
             {
                 result.Add(entry.Key, entry.Value); 
             }
