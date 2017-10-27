@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Bar : MonoBehaviour
 {
 
 	public RecipeCollection collection;
 	public GameObject instructionsText;
+    public GameObject videoArea;
 	private BarInitializer initializer;
 	private StateManager stateManager;
 	private KeywordDetector keywordDetector;
@@ -44,7 +47,9 @@ public class Bar : MonoBehaviour
 
 	private void setupUI ()
 	{
-		switch (stateManager.State) {
+        videoArea.GetComponent<VideoPlayer>().clip = null;
+
+        switch (stateManager.State) {
 		case State.CocktailSelection:
 			instructionsText.GetComponents<TextMesh> () [0].text = "Say a Cocktail number:\n";
 			for (int i = 0; i < collection.recipes.Count; i++) {
@@ -155,9 +160,11 @@ public class Bar : MonoBehaviour
             case SpeechCommand.Done:
                 stateManager.State = State.RecipeExecution;
                 dehighlightAllSpots();
-
                 break; 
+
             case SpeechCommand.Exit:
+                dehighlightAllSpots();
+                stateManager.State = State.CocktailSelection;
                 break;
         }
     }
@@ -167,7 +174,7 @@ public class Bar : MonoBehaviour
     {
         switch (e.Command)
         {
-            case SpeechCommand.Done:
+            case SpeechCommand.Done: case SpeechCommand.Exit:
                 dehighlightAllSpots();
                 stateManager.State = State.CocktailSelection;
                 
@@ -179,9 +186,6 @@ public class Bar : MonoBehaviour
                 stateManager.State = State.BarInitialization;
 
                 break; 
-
-            case SpeechCommand.Exit:
-                break;
         }
     }
 
@@ -197,7 +201,17 @@ public class Bar : MonoBehaviour
             case SpeechCommand.Previous:
                 recipePrevCommand();
                 break;
-                
+
+            case SpeechCommand.Repeat:
+                dehighlightAllSpots();
+                stateManager.resetSteps();
+                stateManager.State = State.BarInitialization;
+                break;
+
+            case SpeechCommand.Exit:
+                dehighlightAllSpots();
+                stateManager.State = State.CocktailSelection;
+                break;
         }
     }
 
@@ -246,9 +260,36 @@ public class Bar : MonoBehaviour
             }
         }
 
-        foreach (string instruction in current.instructions)
+        string text = "";
+        for (int i = 0; i < current.instructions.Count; i++)
         {
-            instructionsText.GetComponents<TextMesh>()[0].text = instruction + "\n";
+            text += (i + 1) + ") " + current.instructions[i] + "\n";
+        }
+        fillTextField(instructionsText.GetComponents<TextMesh>()[0], text);
+
+        videoArea.GetComponent<VideoPlayer>().clip = null;
+        videoArea.GetComponent<VideoPlayer>().clip = Resources.Load("Movies/" + current.video, typeof(VideoClip)) as VideoClip;
+    }
+
+    protected void fillTextField(TextMesh txt, string val)
+    {
+        float rowLimit = 3f; //find the sweet spot    
+
+        string[] parts = val.Split(' ');
+        string tmp = "";
+        txt.text = "";
+        for (int i = 0; i < parts.Length; i++)
+        {
+            tmp = txt.text;
+
+            txt.text += parts[i] + " ";
+            if (txt.GetComponent<Renderer>().bounds.extents.x > rowLimit)
+            {
+                tmp += Environment.NewLine;
+                tmp += parts[i] + " ";
+                txt.text = tmp;
+            }
+
         }
     }
 

@@ -46,47 +46,56 @@
 			},
 			{
 				"id": 7,
-				"name": "TumblerGlass",
+				"name": "Tumbler",
+				"type": 2
+			},
+			{
+				"id": 8,
+				"name": "Measure Cups",
 				"type": 2
 			}
 		],
 	    "steps": [
 	      {
-			"video": "cuttingLemons",
+			"video": "caipirinha_cut_lemons",
 	        "ingredients": [
 	          1,
 			  0
 	        ],
 	        "instructions": [
 	          "Take 1/2 lemon",
-	          "Cut lemon in 3 wedges"
+	          "Cut half lemon into 3 wedges"
 	        ]
 	      },
 	      {
+			"video": "caipirinha_muddle",
 	        "ingredients": [
 	          2,
 			  3,
 			  0,
-			  4
+			  4,
+			  8
 	        ],
 	        "instructions": [
-	          "Add the lemon wedges and 1 tbsp. sugar into the shaker",
+	          "Add the lemon wedges and 2 cl. sugar into the shaker",
 			  "Muddle the ingredients gently"
 	        ]
 	      },
 	      {
+			"video": "caipirinha_cachaca",
 	        "ingredients": [
 	          2,
 			  5,
-			  6
+			  6,
+			  8
 	        ],
 	        "instructions": [
-	          "Add 4cl into the shaker",
+	          "Add 4cl Cachaca into the shaker",
 			  "Add ice into the shaker"
 	        ]
 	      },
 	      {
-	        "video": "shakeCaipirinha",
+	        "video": "caipirinha_shake",
 	        "ingredients": [
 	          2
 	        ],
@@ -95,13 +104,15 @@
 	        ]
 	      },
 	      {
-	        "video": "pourCaipirinhaInGlass",
+	        "video": "caipirinha_glass",
 	        "ingredients": [
 	          2,
-			  7
+			  7,
+			  6
 	        ],
 	        "instructions": [
-	          "Pour into tumbler glass"
+	          "Pour into tumbler glass",
+			  "Add more ice"
 	        ]
 	      }
 	    ]
