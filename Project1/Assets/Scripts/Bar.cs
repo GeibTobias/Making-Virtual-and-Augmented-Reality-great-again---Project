@@ -10,6 +10,11 @@ public class Bar : MonoBehaviour
 	public RecipeCollection collection;
 	public GameObject instructionsText;
     public GameObject videoArea;
+	public GameObject next;
+	public GameObject previous;
+	public GameObject exit;
+	public GameObject redo;
+	public GameObject done;
 	private BarInitializer initializer;
 	private StateManager stateManager;
 	private KeywordDetector keywordDetector;
@@ -49,6 +54,8 @@ public class Bar : MonoBehaviour
 	{
         videoArea.GetComponent<VideoPlayer>().clip = null;
 
+		updateLabels (stateManager.State);
+
         switch (stateManager.State) {
 		case State.CocktailSelection:
 			instructionsText.GetComponents<TextMesh> () [0].text = "Say a Cocktail number:\n";
@@ -68,20 +75,53 @@ public class Bar : MonoBehaviour
 			break;
 
 		case State.RecipeExecution:
-                stateManager.resetSteps(); 
-                // show first step
-                recipeNextCommand();
+            stateManager.resetSteps(); 
+            // show first step
+            recipeNextCommand();
 
-                break;
+            break;
 
 		case State.RecipeFinished:
-                dehighlightAllSpots();
-                stateManager.resetSteps();
+            dehighlightAllSpots();
+            stateManager.resetSteps();
 
-                instructionsText.GetComponents<TextMesh>()[0].text = "Enjoy the Cocktail.\nSay 'Repeat' to do it again\nSay 'Done' to return to selection";
+            instructionsText.GetComponents<TextMesh>()[0].text = "Enjoy the Cocktail.\nSay 'Redo' to do it again\nSay 'Done' to return to selection";
 
-                break;
+            break;
 		}	
+	}
+
+	private void updateLabels(State state) {
+		switch (state) {
+		case State.CocktailSelection:
+			next.SetActive(false);
+			previous.SetActive(false);
+			exit.SetActive(false);
+			redo.SetActive(false);
+			done.SetActive(false);
+			break;
+		case State.BarInitialization:
+			next.SetActive(false);
+			previous.SetActive(false);
+			exit.SetActive(true);
+			redo.SetActive(false);
+			done.SetActive(true);
+			break;
+		case State.RecipeExecution:
+			next.SetActive(true);
+			previous.SetActive(stateManager.currentStepCount > 0);
+			exit.SetActive(true);
+			redo.SetActive(true);
+			done.SetActive(false);
+			break;
+		case State.RecipeFinished:
+			next.SetActive(false);
+			previous.SetActive(false);
+			exit.SetActive(true);
+			redo.SetActive(true);
+			done.SetActive(true);
+			break;
+		}
 	}
 
 	private RecipeCollection LoadRecipes ()
@@ -150,6 +190,8 @@ public class Bar : MonoBehaviour
                 this.recipeFinished(e);
                 break;
 		}
+
+		updateLabels (stateManager.State);
 	}
 
 
@@ -160,6 +202,7 @@ public class Bar : MonoBehaviour
             case SpeechCommand.Done:
                 stateManager.State = State.RecipeExecution;
                 dehighlightAllSpots();
+				processStep(stateManager.currentStep);
                 break; 
 
             case SpeechCommand.Exit:
@@ -289,7 +332,6 @@ public class Bar : MonoBehaviour
                 tmp += parts[i] + " ";
                 txt.text = tmp;
             }
-
         }
     }
 
