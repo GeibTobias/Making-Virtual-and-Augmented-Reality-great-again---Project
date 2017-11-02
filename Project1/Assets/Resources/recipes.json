@@ -1,6 +1,243 @@
 {
 	"name": "best cocktails ever collection",
 	"recipes": [
+      {
+        "id": "Mojito",
+        "picture": "mojito",
+        "keywords": [
+          "Mojito"
+        ],
+        "ingredients": [
+          {
+            "id": 0,
+            "name": "White Rum",
+            "type": 0
+          },
+          {
+            "id": 1,
+            "name": "Mint Leaves",
+            "type": 1
+          },
+          {
+            "id": 2,
+            "name": "Sugar Syrup",
+            "type": 0
+          },
+          {
+            "id": 3,
+            "name": "Lime Juice",
+            "type": 0
+          },
+          {
+            "id": 4,
+            "name": "Soda Water",
+            "type": 0
+          },
+          {
+            "id": 5,
+            "name": "Tall Glass",
+            "type": 2
+          },
+          {
+            "id": 6,
+            "name": "Crushed Ice",
+            "type": 1
+          },
+          {
+            "id": 7,
+            "name": "Spoon",
+            "type": 1
+          }
+        ],
+        "steps": [
+          {
+            "ingredients": [
+              0,
+              5
+            ],
+            "instructions": [
+              "Add 50ml of White Rum into Glass"
+            ]
+          },
+          {
+            "ingredients": [
+              5,
+              7,
+              3,
+              2,
+              1
+            ],
+            "instructions": [
+              "Add 8 mint leaves",
+              "Add 12.5ml of sugar syrup",
+              "Add 25ml of lime juice",
+              "Mix with spoon"
+            ]
+          },
+          {
+            "ingredients": [
+              6,
+              4,
+              7,
+              5
+            ],
+            "instructions": [
+              "Add half of crushed ice",
+              "Add a splash of soda water",
+              "Mix with spoon"
+            ]
+          },
+          {
+            "ingredients": [
+              6,
+              1,
+              4,
+              5
+            ],
+            "instructions": [
+              "Top of with crushed ice",
+              "Top of with mint leaves",
+              "Add small splash of soda"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Martini",
+        "picture": "martini",
+        "keywords": [
+          "Martini"
+        ],
+        "ingredients": [
+          {
+            "id": 0,
+            "name": "Gin",
+            "type": 0
+          },
+          {
+            "id": 1,
+            "name": "Vermouth",
+            "type": 0
+          },
+          {
+            "id": 2,
+            "name": "Lemon Twist",
+            "type": 1
+          },
+          {
+            "id": 3,
+            "name": "Martini Glass",
+            "type": 2
+          },
+          {
+            "id": 4,
+            "name": "Mixing Glass",
+            "type": 2
+          },
+          {
+            "id": 5,
+            "name": "Crushed Ice",
+            "type": 1
+          },
+          {
+            "id": 6,
+            "name": "Soda Water",
+            "type": 0
+          },
+          {
+            "id": 7,
+            "name": "Spoon",
+            "type": 1
+          },
+          {
+            "id": 8,
+            "name": "Drainer",
+            "type": 1
+          }
+
+        ],
+        "steps": [
+          {
+            "ingredients": [
+              6,
+              5,
+              3
+            ],
+            "instructions": [
+              "Fill martini glass with ice",
+              "Add soda water"
+            ]
+          },
+          {
+            "ingredients": [
+              5,
+              4,
+              1,
+              7
+            ],
+            "instructions": [
+              "Fill mixing glass with ice",
+              "Add 10ml of dry vermouth",
+              "Stir with spoon"
+            ]
+          },
+          {
+            "ingredients": [
+              4,
+              8
+            ],
+            "instructions": [
+              "Drain out glass, leaving only the ice"
+            ]
+          },
+          {
+            "ingredients": [
+              4,
+              0
+            ],
+            "instructions": [
+              "Add 50ml of gin"
+            ]
+          },
+          {
+            "ingredients": [
+              4,
+              7
+            ],
+            "instructions": [
+              "Stir for 15 seconds"
+            ]
+          },
+          {
+            "ingredients": [
+              3
+
+            ],
+            "instructions": [
+              "Remove content from martini glass"
+            ]
+          },
+          {
+            "ingredients": [
+              3,
+              4,
+              8
+            ],
+            "instructions": [
+              "Strain gin into martini glass"
+            ]
+          },
+          {
+            "ingredients": [
+              3,
+              2
+            ],
+            "instructions": [
+              "Zest with lemon twist and add into martini glass"
+            ]
+          }
+        ]
+      },
 	  {
 	    "id": "Caipirinha",
 	    "picture": "caipirinha",
@@ -113,50 +350,6 @@
 	        "instructions": [
 	          "Pour into tumbler glass",
 			  "Add more ice"
-	        ]
-	      }
-	    ]
-	  },
-	  {
-	    "id": "Sex on the Beach",
-	    "picture": "sexOnTheBeach",
-	    "keywords": [
-	      "Sex",
-	      "Sex on the Beach",
-	      "Beach"
-	    ],
-		"ingredients": [
-			{
-				"id": 0,
-				"name": "Lemon",
-				"type": 1
-			},
-			{
-				"id": 1,
-				"name": "Knife",
-				"type": 1
-			}
-		],
-	    "steps": [
-	      {
-	        "video": "cutLemons",
-	        "ingredients": [
-	          0,
-	          1
-	        ],
-	        "instructions": [
-	          "take lemon",
-	          "cut lemon",
-	          "put lemon into mixer"
-	        ]
-	      },
-	      {
-	        "video": "cutLemons",
-	        "ingredients": [
-	          2
-	        ],
-	        "instructions": [
-	          "Throw the mixer in the air (see video)"
 	        ]
 	      }
 	    ]
