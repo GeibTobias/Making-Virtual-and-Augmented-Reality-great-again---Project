@@ -54,8 +54,6 @@ public class Bar : MonoBehaviour
 	{
 		videoArea.GetComponent<VideoPlayer> ().clip = null;
 
-		updateLabels (stateManager.State);
-
 		switch (stateManager.State) {
 		case State.CocktailSelection:
 			instructionsText.GetComponents<TextMesh> () [0].text = "Say a Cocktail number:\n";
@@ -82,17 +80,21 @@ public class Bar : MonoBehaviour
 			break;
 
 		case State.RecipeFinished:
-			dehighlightAllSpots ();
 			stateManager.resetSteps ();
 
 			instructionsText.GetComponents<TextMesh> () [0].text = "Enjoy the Cocktail.\nSay 'Redo' to do it again\nSay 'Done' to return to selection";
 
 			break;
 		}
+
+		updateLabels (stateManager.State);
 	}
 
 	private void updateLabels (State state)
 	{
+		dehighlightAllSpots ();
+		deactivateAllSpots ();
+
 		switch (state) {
 		case State.CocktailSelection:
 			next.SetActive (false);
@@ -112,6 +114,7 @@ public class Bar : MonoBehaviour
 			cocktailImage.SetActive (true);
 			Texture2D texture = Resources.Load ("Images/" + stateManager.currentRecipe.picture) as Texture2D;
 			cocktailImage.GetComponent<Renderer> ().material.mainTexture = texture;
+			activateSpots ();
 			break;
 
 		case State.RecipeExecution:
@@ -121,6 +124,8 @@ public class Bar : MonoBehaviour
 			redo.SetActive (true);
 			done.SetActive (false);
 			cocktailImage.SetActive (true);
+			activateSpots ();
+			highlightSpots ();
 			break;
 
 		case State.RecipeFinished:
@@ -215,12 +220,10 @@ public class Bar : MonoBehaviour
 		switch (e.Command) {
 		case SpeechCommand.Done:
 			stateManager.State = State.RecipeExecution;
-			dehighlightAllSpots ();
 			processStep (stateManager.currentStep);
 			break;
 
 		case SpeechCommand.Exit:
-			dehighlightAllSpots ();
 			stateManager.State = State.CocktailSelection;
 			break;
 		}
@@ -232,13 +235,11 @@ public class Bar : MonoBehaviour
 		switch (e.Command) {
 		case SpeechCommand.Done:
 		case SpeechCommand.Exit:
-			dehighlightAllSpots ();
 			stateManager.State = State.CocktailSelection;
 
 			break;
 
 		case SpeechCommand.Repeat:
-			dehighlightAllSpots ();
 			stateManager.resetSteps ();
 			stateManager.State = State.BarInitialization;
 
@@ -259,13 +260,11 @@ public class Bar : MonoBehaviour
 			break;
 
 		case SpeechCommand.Repeat:
-			dehighlightAllSpots ();
 			stateManager.resetSteps ();
 			stateManager.State = State.BarInitialization;
 			break;
 
 		case SpeechCommand.Exit:
-			dehighlightAllSpots ();
 			stateManager.State = State.CocktailSelection;
 			break;
 		}
@@ -298,18 +297,7 @@ public class Bar : MonoBehaviour
 	{
 		Debug.Log ("Executing step");
 
-		// deactivate highlight for all spots
-		dehighlightAllSpots ();
 
-		Dictionary<Ingredient, GameObject> dict = initializer.getIngGoMapping ();
-
-		foreach (string item in current.ingredients) {
-			Dictionary<Ingredient, GameObject> toHighlight = getEntryById (long.Parse (item), dict);
-
-			foreach (KeyValuePair<Ingredient, GameObject> entry in toHighlight) {
-				SpotHighlighter.activate (entry.Value, entry.Key); // can this be shifted into the other method?????
-			}
-		}
 
 		string text = "";
 		for (int i = 0; i < current.instructions.Count; i++) {
@@ -359,7 +347,33 @@ public class Bar : MonoBehaviour
 	{
 		List<GameObject> tmp = initializer.getAllSpots ();
 		foreach (GameObject go in tmp) {
-			SpotHighlighter.deactive (go);
+			SpotHighlighter.setHighlighted(false, go);
+		}
+	}
+
+	private void deactivateAllSpots ()
+	{
+		List<GameObject> tmp = initializer.getAllSpots ();
+		foreach (GameObject go in tmp) {
+			SpotHighlighter.deactive(go);
+		}
+	}
+
+	private void activateSpots() {
+		Dictionary<Ingredient, GameObject> dict = initializer.getIngGoMapping ();
+
+		foreach (Ingredient ing in stateManager.currentRecipe.ingredients) {
+			SpotHighlighter.activate (dict [ing], ing);
+		}
+	}
+
+	private void highlightSpots() {
+		Dictionary<Ingredient, GameObject> dict = initializer.getIngGoMapping ();
+
+		foreach (KeyValuePair<Ingredient, GameObject> entry in dict) {
+			if (stateManager.currentStep.ingredients.Contains(entry.Key.id)) {
+				SpotHighlighter.setHighlighted(true, entry.Value);
+			}
 		}
 	}
 }
