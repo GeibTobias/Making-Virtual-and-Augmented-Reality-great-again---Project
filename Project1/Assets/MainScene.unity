@@ -112,6 +112,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!84 &48839419
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 969
+  m_Height: 518
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &52970226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1031,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 289640329}
+  - component: {fileID: 289640330}
   m_Layer: 0
   m_Name: Cup4
   m_TagString: CupHighlightUI
@@ -1026,6 +1054,18 @@ Transform:
   m_Father: {fileID: 1892194710}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289640330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289640328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 0
 --- !u!1 &295321218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1407,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!84 &353482907
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 969
+  m_Height: 518
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &365752943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,33 +3264,6 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
---- !u!84 &738202582
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 617
-  m_Height: 248
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &763984980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,6 +3404,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 801466945}
+  - component: {fileID: 801466946}
   m_Layer: 0
   m_Name: Misc1
   m_TagString: MiscHighlightUI
@@ -3386,6 +3427,18 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &801466946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801466944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 3
 --- !u!1 &835940209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,6 +3447,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 835940210}
+  - component: {fileID: 835940211}
   m_Layer: 0
   m_Name: Cup2
   m_TagString: CupHighlightUI
@@ -3416,6 +3470,18 @@ Transform:
   m_Father: {fileID: 1892194710}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &835940211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 835940209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 2
 --- !u!1 &873766817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,6 +3992,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1096228303}
+  - component: {fileID: 1096228304}
   m_Layer: 0
   m_Name: Bottle2
   m_TagString: BottleHighlightUI
@@ -3948,6 +4015,18 @@ Transform:
   m_Father: {fileID: 442229023}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1096228304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096228302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 1
 --- !u!1 &1161988686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,6 +4182,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1186196114}
+  - component: {fileID: 1186196115}
   m_Layer: 0
   m_Name: Misc5
   m_TagString: MiscHighlightUI
@@ -4125,6 +4205,18 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1186196115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186196113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 1
 --- !u!1 &1285184272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,6 +4311,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1313959552}
+  - component: {fileID: 1313959553}
   m_Layer: 0
   m_Name: Bottle1
   m_TagString: BottleHighlightUI
@@ -4241,6 +4334,18 @@ Transform:
   m_Father: {fileID: 442229023}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313959553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313959551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 0
 --- !u!1 &1315676316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4334,6 +4439,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1316721997}
+  - component: {fileID: 1316721998}
   m_Layer: 0
   m_Name: Bottle6
   m_TagString: BottleHighlightUI
@@ -4356,6 +4462,18 @@ Transform:
   m_Father: {fileID: 442229023}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1316721998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1316721996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 5
 --- !u!1 &1321946123
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,6 +4755,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1393828630}
+  - component: {fileID: 1393828631}
   m_Layer: 0
   m_Name: Bottle3
   m_TagString: BottleHighlightUI
@@ -4659,6 +4778,18 @@ Transform:
   m_Father: {fileID: 442229023}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393828631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393828629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 2
 --- !u!1 &1437726982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,8 +4985,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 1447007455}
   outlineCamera: {fileID: 2047046884}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 738202582}
-  extraRenderTexture: {fileID: 1724192516}
+  renderTexture: {fileID: 353482907}
+  extraRenderTexture: {fileID: 48839419}
 --- !u!114 &1447007458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4876,6 +5007,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1468515536}
+  - component: {fileID: 1468515537}
   m_Layer: 0
   m_Name: Bottle4
   m_TagString: BottleHighlightUI
@@ -4898,6 +5030,18 @@ Transform:
   m_Father: {fileID: 442229023}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1468515537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468515535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 3
 --- !u!1 &1547919105
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,6 +5238,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1624045097}
+  - component: {fileID: 1624045098}
   m_Layer: 0
   m_Name: Cup1
   m_TagString: CupHighlightUI
@@ -5116,6 +5261,18 @@ Transform:
   m_Father: {fileID: 1892194710}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624045098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1624045096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 3
 --- !u!1 &1637545855
 GameObject:
   m_ObjectHideFlags: 0
@@ -5318,33 +5475,6 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
---- !u!84 &1724192516
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 617
-  m_Height: 248
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1726956427
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,6 +5515,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1803027412}
+  - component: {fileID: 1803027413}
   m_Layer: 0
   m_Name: Cup3
   m_TagString: CupHighlightUI
@@ -5407,6 +5538,18 @@ Transform:
   m_Father: {fileID: 1892194710}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803027413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803027411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 1
 --- !u!1 &1808497625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5415,6 +5558,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1808497626}
+  - component: {fileID: 1808497627}
   m_Layer: 0
   m_Name: Misc3
   m_TagString: MiscHighlightUI
@@ -5437,6 +5581,18 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1808497627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808497625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 5
 --- !u!1 &1823583697
 GameObject:
   m_ObjectHideFlags: 0
@@ -5445,6 +5601,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1823583698}
+  - component: {fileID: 1823583699}
   m_Layer: 0
   m_Name: Misc4
   m_TagString: MiscHighlightUI
@@ -5467,6 +5624,18 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823583699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1823583697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 0
 --- !u!1 &1827191834
 GameObject:
   m_ObjectHideFlags: 0
@@ -5661,6 +5830,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1836976759}
+  - component: {fileID: 1836976760}
   m_Layer: 0
   m_Name: Misc6
   m_TagString: MiscHighlightUI
@@ -5683,6 +5853,18 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1836976760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1836976758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 2
 --- !u!1 &1849577716
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,6 +6278,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1996222829}
+  - component: {fileID: 1996222830}
   m_Layer: 0
   m_Name: Misc2
   m_TagString: MiscHighlightUI
@@ -6118,6 +6301,18 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996222830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996222828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 4
 --- !u!1 &2047046883
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,7 +6355,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 738202582}
+  m_TargetTexture: {fileID: 353482907}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -6462,6 +6657,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2128493290}
+  - component: {fileID: 2128493291}
   m_Layer: 0
   m_Name: Bottle5
   m_TagString: BottleHighlightUI
@@ -6484,3 +6680,15 @@ Transform:
   m_Father: {fileID: 442229023}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128493291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2128493289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9790f2f90ee7b44bc7a360f346b5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderNumber: 4
