@@ -57,7 +57,7 @@ public class KeywordDetector : MonoBehaviour
 		builder.AppendFormat ("\tDuration: {0} seconds{1}", args.phraseDuration.TotalSeconds, Environment.NewLine);
 		Debug.Log (builder.ToString ());
 
-		instructionsText.GetComponents<TextMesh> () [0].text = args.text;
+		//instructionsText.GetComponents<TextMesh> () [0].text = args.text;
 			
 		CommandDetectedEventArgs cdArgs = new CommandDetectedEventArgs ();
 		if (Constants.numbers.Contains (args.text)) {
@@ -80,7 +80,9 @@ public class KeywordDetector : MonoBehaviour
 			cdArgs.Command = SpeechCommand.Done;
 		} else if (Constants.exitKeywords.Contains (args.text)) {
 			cdArgs.Command = SpeechCommand.Exit;
-		}
+		} else if (Constants.repeatKeywords.Contains(args.text)) {
+            cdArgs.Command = SpeechCommand.Repeat; 
+        }
 		
 		if (cdArgs.Command != SpeechCommand.None) {
 			OnCommandDetected (this, cdArgs);

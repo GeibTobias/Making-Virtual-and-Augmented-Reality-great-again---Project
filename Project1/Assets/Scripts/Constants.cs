@@ -21,10 +21,14 @@ public class Constants
 	};
 	public static readonly List<string> exitKeywords = new List<string> () {
 		"exit",
-		"redo",
 		"quit",
 		"selection",
 		"back to selection",
 		"back to cocktail selection"
 	};
+    public static readonly List<string> repeatKeywords = new List<string>()
+    {
+        "redo",
+        "repeat"
+    };
 }
