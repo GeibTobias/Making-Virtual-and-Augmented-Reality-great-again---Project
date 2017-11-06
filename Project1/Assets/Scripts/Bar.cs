@@ -81,7 +81,7 @@ public class Bar : MonoBehaviour
 			// Mapping of ingredients and GameObjects
 			initializer.init (stateManager.currentRecipe.ingredients);
 
-			instructionsText.GetComponents<TextMesh> () [0].text = "Place Bottles and\nIngredients on Table\nSay 'DONE' if finished";
+			instructionsText.GetComponents<TextMesh> () [0].text = "Place Bottles and\nIngredients on Table\nSay 'Continue' if finished";
 
 			break;
 
@@ -95,7 +95,7 @@ public class Bar : MonoBehaviour
 		case State.RecipeFinished:
 			stateManager.resetSteps ();
 
-			instructionsText.GetComponents<TextMesh> () [0].text = "Enjoy the Cocktail.\nSay 'Redo' to do it again\nSay 'Done' to return to selection";
+			instructionsText.GetComponents<TextMesh> () [0].text = "Enjoy the Cocktail.\nSay 'Redo' to do it again\nSay 'Exit' to return to selection";
 
 			break;
 		}

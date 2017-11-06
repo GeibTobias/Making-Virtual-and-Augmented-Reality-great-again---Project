@@ -1050,7 +1050,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 295321218}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -1.0700003, y: -0.060000066, z: -1.28}
+  m_LocalPosition: {x: -0.94, y: -0.060000066, z: -1.28}
   m_LocalScale: {x: 1.851852, y: 1.0928965, z: 1}
   m_Children: []
   m_Father: {fileID: 1393828630}
@@ -1221,7 +1221,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 340269470}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -2.5851836, y: -0.060690235, z: -3.8360682}
+  m_LocalPosition: {x: -2.39, y: -0.060690235, z: -3.8360682}
   m_LocalScale: {x: 1.8518518, y: 1.0928974, z: 1}
   m_Children: []
   m_Father: {fileID: 1313959552}
@@ -2144,6 +2144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionsText: {fileID: 502302623}
+  m_Keywords: []
 --- !u!114 &500608558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3196,6 +3197,33 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
+--- !u!84 &738202582
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 617
+  m_Height: 248
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &763984980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,12 +3455,12 @@ TextMesh:
   m_GameObject: {fileID: 873766817}
   m_Text: 1) Cocktail
   m_OffsetZ: 0
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.15
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 32
+  m_FontSize: 64
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -3814,12 +3842,12 @@ TextMesh:
   m_GameObject: {fileID: 1047189530}
   m_Text: 2) Cocktail
   m_OffsetZ: 0
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.15
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 32
+  m_FontSize: 64
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -4237,7 +4265,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1315676316}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -1.82, y: -0.060999993, z: -2.4999998}
+  m_LocalPosition: {x: -1.62, y: -0.060999993, z: -2.4999998}
   m_LocalScale: {x: 1.851852, y: 1.0928965, z: 1}
   m_Children: []
   m_Father: {fileID: 1096228303}
@@ -4810,10 +4838,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineThickness: 3
-  lineIntensity: 0.5
+  lineThickness: 5
+  lineIntensity: 2
   fillAmount: 0.2
-  lineColor0: {r: 1, g: 0, b: 0, a: 1}
+  lineColor0: {r: 1, g: 1, b: 1, a: 1}
   lineColor1: {r: 0, g: 1, b: 0, a: 1}
   lineColor2: {r: 0, g: 0, b: 1, a: 1}
   additiveRendering: 0
@@ -4826,8 +4854,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 1447007455}
   outlineCamera: {fileID: 2047046884}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1756673760}
-  extraRenderTexture: {fileID: 2034111553}
+  renderTexture: {fileID: 738202582}
+  extraRenderTexture: {fileID: 1724192516}
 --- !u!114 &1447007458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,6 +5318,33 @@ MonoBehaviour:
   eraseRenderer: 0
   originalLayer: 0
   originalMaterials: []
+--- !u!84 &1724192516
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 617
+  m_Height: 248
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1726956427
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,33 +5377,6 @@ Transform:
   m_Father: {fileID: 500608556}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1756673760
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 798
-  m_Height: 449
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1803027411
 GameObject:
   m_ObjectHideFlags: 0
@@ -5984,12 +6012,12 @@ TextMesh:
   m_GameObject: {fileID: 1958427681}
   m_Text: 3) Cocktail
   m_OffsetZ: 0
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.15
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 32
+  m_FontSize: 64
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -6090,33 +6118,6 @@ Transform:
   m_Father: {fileID: 625882602}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &2034111553
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 798
-  m_Height: 449
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &2047046883
 GameObject:
   m_ObjectHideFlags: 0
@@ -6159,7 +6160,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1756673760}
+  m_TargetTexture: {fileID: 738202582}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -6407,12 +6408,12 @@ TextMesh:
   m_GameObject: {fileID: 2074172136}
   m_Text: Say a Cocktail number
   m_OffsetZ: 0
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.15
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 32
+  m_FontSize: 64
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
