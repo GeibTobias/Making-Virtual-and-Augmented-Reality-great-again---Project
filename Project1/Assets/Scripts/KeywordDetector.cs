@@ -41,7 +41,7 @@ public class KeywordDetector : MonoBehaviour
 	void Start ()
 	{
             
-		IEnumerable<string> enumerable = Constants.numbers.Union (Constants.nextKeywords).Union (Constants.previousKeywords).Union (Constants.doneKeywords).Union (Constants.exitKeywords);
+	IEnumerable<string> enumerable = Constants.numbers.Union (Constants.nextKeywords).Union (Constants.previousKeywords).Union (Constants.doneKeywords).Union (Constants.exitKeywords).Union (Constants.repeatKeywords);
 		m_Keywords = enumerable.ToList ();
 
 		m_Recognizer = new KeywordRecognizer (m_Keywords.ToArray ());

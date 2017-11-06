@@ -16,6 +16,8 @@ public class Bar : MonoBehaviour
 	public GameObject redo;
 	public GameObject done;
 	public GameObject cocktailImage;
+	public GameObject cocktailSelectionGO;
+	public List<GameObject> cocktailSelectionCocktails;
 	private BarInitializer initializer;
 	private StateManager stateManager;
 	private KeywordDetector keywordDetector;
@@ -54,12 +56,23 @@ public class Bar : MonoBehaviour
 	{
 		videoArea.GetComponent<VideoPlayer> ().clip = null;
 
+		cocktailSelectionGO.SetActive(stateManager.State == State.CocktailSelection);
+		instructionsText.SetActive (stateManager.State != State.CocktailSelection);
+
 		switch (stateManager.State) {
 		case State.CocktailSelection:
-			instructionsText.GetComponents<TextMesh> () [0].text = "Say a Cocktail number:\n";
+			//instructionsText.GetComponents<TextMesh> () [0].text = "Say a Cocktail number:\n";
 			for (int i = 0; i < collection.recipes.Count; i++) {
 				string line = (i + 1) + ") " + collection.recipes [i].id + "\n";
-				instructionsText.GetComponents<TextMesh> () [0].text += line;
+				//instructionsText.GetComponents<TextMesh> () [0].text += line;
+				cocktailSelectionCocktails [i].GetComponentInChildren<TextMesh>().text = line;
+				Texture2D texture = Resources.Load ("Images/" + collection.recipes[i].id) as Texture2D;
+				Renderer[] renderers = cocktailSelectionCocktails [i].GetComponentsInChildren<Renderer> ();
+				foreach (var renderer in renderers) {
+					if (renderer.CompareTag("CocktailSelectionImage")) {
+						renderer.material.mainTexture = texture;
+					}
+				}
 			}
 
 			break;

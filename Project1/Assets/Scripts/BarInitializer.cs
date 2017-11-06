@@ -129,8 +129,6 @@ public class BarInitializer
 	}
 
 	private void showUsedGOs() {
-		List<GameObject[]> uiLists = new List<GameObject[]>() {bottleUIs, miscUIs, cupUIs};
-
         // highlight all ingredient and spots
         foreach (KeyValuePair<Ingredient, GameObject> entry in ingredientMapping)
         {
