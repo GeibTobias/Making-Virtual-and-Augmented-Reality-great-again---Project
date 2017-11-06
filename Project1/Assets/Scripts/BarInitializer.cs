@@ -36,7 +36,11 @@ public class BarInitializer
 			throw new Exception ("Some game object for highlighting areas were not found.");
 		}
 
-		Debug.Log ("# bottle ui game objects: " + bottleUIs.Length);
+        orderArrays(bottleUIs);
+        orderArrays(cupUIs);
+        orderArrays(miscUIs);
+
+        Debug.Log ("# bottle ui game objects: " + bottleUIs.Length);
 		Debug.Log ("# bucket ui game objects: " + cupUIs.Length);
 		Debug.Log ("# misc ui game objects: " + miscUIs.Length);
 
@@ -53,7 +57,29 @@ public class BarInitializer
         }
     }
 
-	public Dictionary<Ingredient, GameObject> init (List<Ingredient> ingredients)
+
+    private void orderArrays(GameObject[] uiArray)
+    {
+        List<int> tmpList = new List<int>(); 
+
+        // sort bottleUIs
+        foreach(GameObject obj in uiArray)
+        {
+            if (obj.GetComponent<OrderAttachment>() != null)
+            {
+                int i = obj.GetComponent<OrderAttachment>().orderNumber;
+                tmpList.Add(i);
+            }
+            else
+            {
+                throw new Exception("Given uiArrays elements has no component 'OrderAttachment'.");
+            }
+        }
+        Array.Sort(tmpList.ToArray(), uiArray); 
+    }
+
+
+    public Dictionary<Ingredient, GameObject> init (List<Ingredient> ingredients)
 	{
 		if (ingredients == null) {
 			throw new ArgumentNullException ("Parameter ingredients is null.");
