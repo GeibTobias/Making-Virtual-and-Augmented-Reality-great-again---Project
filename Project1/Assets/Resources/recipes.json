@@ -47,6 +47,11 @@
             "id": 7,
             "name": "Spoon",
             "type": 1
+          },
+          {
+            "id": 8,
+            "name": "Measuring Cup",
+            "type": 2
           }
         ],
         "steps": [
@@ -54,7 +59,8 @@
             "video": "Mojito1",
             "ingredients": [
               0,
-              5
+              5,
+              8
             ],
             "instructions": [
               "Add 50ml of White Rum into Glass"
@@ -67,13 +73,14 @@
               7,
               3,
               2,
-              1
+              1,
+              8
             ],
             "instructions": [
-              "Add 8 mint leaves",
+              "Into glass add 8 mint leaves",
               "Add 12.5ml of sugar syrup",
               "Add 25ml of lime juice",
-              "Mix with spoon"
+              "Mix contents with spoon"
             ]
           },
           {
@@ -85,7 +92,7 @@
               5
             ],
             "instructions": [
-              "Add half of crushed ice",
+              "Add half of crushed ice into the glass",
               "Add a splash of soda water",
               "Mix with spoon"
             ]
@@ -99,7 +106,7 @@
               5
             ],
             "instructions": [
-              "Top of with crushed ice",
+              "Top of glass with crushed ice",
               "Top of with mint leaves",
               "Add small splash of soda"
             ]
@@ -157,6 +164,11 @@
             "id": 8,
             "name": "Drainer",
             "type": 1
+          },
+          {
+            "id": 9,
+            "name": "Measuring Cup",
+            "type": 2
           }
 
         ],
@@ -179,7 +191,8 @@
               5,
               4,
               1,
-              7
+              7,
+              9
             ],
             "instructions": [
               "Fill mixing glass with ice",
@@ -194,17 +207,18 @@
               8
             ],
             "instructions": [
-              "Drain out glass, leaving only the ice"
+              "Drain out mixing glass, leaving only the ice"
             ]
           },
           {
             "video": "Martini4",
             "ingredients": [
               4,
-              0
+              0,
+              9
             ],
             "instructions": [
-              "Add 50ml of gin"
+              "Add 50ml of gin into mixing glass"
             ]
           },
           {
@@ -224,7 +238,7 @@
 
             ],
             "instructions": [
-              "Remove content from martini glass"
+              "Take martini glass and remove its contents"
             ]
           },
           {
@@ -235,7 +249,7 @@
               8
             ],
             "instructions": [
-              "Strain gin into martini glass"
+              "Take mixing glass and strain its liquid content into martini glass"
             ]
           },
           {
